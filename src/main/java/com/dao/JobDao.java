@@ -10,13 +10,14 @@ import com.entity.Jobs;
 import com.entity.Registration;
 
 public class JobDao {
-	public static final String QUERY_1 = "INSERT INTO JOBPORTAL_JOBVIEWDETAILS(ID,TITLE,DESCRIPTION,CATEGORY,STATUS,LOCATION) VALUES(JOBPORTAL_SQ.NEXTVAL,?,?,?,?,?)";
-	public static final String QUERY_2 = "SELECT * FROM JOBPORTAL_JOBVIEWDETAILS";
+	public static final String QUERY_1 = "INSERT INTO JOBPORTAL_JOBVIEWDETAILS(ID,TITLE,DESCRIPTION,CATEGORY,STATUS,LOCATION,NAME) VALUES(JOBPORTAL_SQ.NEXTVAL,?,?,?,?,?,?)";
+	public static final String QUERY_2 = "SELECT * FROM JOBPORTAL_JOBVIEWDETAILS WHERE NAME=?";
 	public static final String QUERY_3 = "SELECT * FROM JOBPORTAL_JOBVIEWDETAILS WHERE ID=?";
 	public static final String QUERY_4 = "UPDATE JOBPORTAL_JOBVIEWDETAILS SET TITLE=?,DESCRIPTION=?,CATEGORY=?,STATUS=?,LOCATION=? WHERE ID=?";
 	public static final String QUERY_5 = "DELETE FROM JOBPORTAL_JOBVIEWDETAILS WHERE ID=?";
 	public static final String QUERY_6 = "INSERT INTO JOBPORTAL_REGISTRATIONDETAILS(ID,NAME,EMAIL,PASSWORD,QUALIFICATION,DESIGNATION,ROLE) VALUES(JOBPORTAL_SQ.NEXTVAL,?,?,?,?,?,?)";
 	//public static final String QUERY_7 = "SELECT NAME FROM JOBPORTAL_REGISTRATIONDETAILS";
+	
 	
 	private Connection conn;
 
@@ -34,7 +35,10 @@ public class JobDao {
 			ps.setString(3, j.getCategory());
 			ps.setString(4, j.getStatus());
 			ps.setString(5, j.getLocation());
-
+			System.out.println("DAO J "+j.getName());
+			System.out.println("hashcode of j in DAO "+j.hashCode());
+			ps.setString(6, j.getName());
+System.out.println("DAO J "+j.getName());
 			int i = ps.executeUpdate();
 
 			if (i == 1) {
@@ -47,14 +51,18 @@ public class JobDao {
 
 	}
 
-	public List<Jobs> getAllJobs() {
+	public List<Jobs> getAllJobs(String name) {
 		List<Jobs> list = new ArrayList<Jobs>();
 		Jobs j = null;
 		try {
 			PreparedStatement ps = conn.prepareStatement(QUERY_2);
+	
+			ps.setString(1,name);
+			
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				j = new Jobs();
+				j=new Jobs();
+				System.out.println(rs.getString(2));
 				j.setId(rs.getInt(1));
 				j.setTitle(rs.getString(2));
 				j.setDescription(rs.getString(3));

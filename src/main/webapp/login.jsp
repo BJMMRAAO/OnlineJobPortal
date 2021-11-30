@@ -6,6 +6,12 @@
 <meta charset="ISO-8859-1">
 <title>Login Here</title>
 <%@include file="all_components/all_css.jsp"%>
+<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
+<style>
+value{
+float: right;
+}
+</style>
 </head>
 <body style="background-color: #f0f1f2;">
 	<%@include file="all_components/nav_bar.jsp"%>
@@ -13,6 +19,10 @@
 		<c:if test="${not empty succMsg }">
 			<h4 class="text-center text-success">${succMsg }</h4>
 			<c:remove var="succMsg" />
+		</c:if>
+		<c:if test="${not empty succMsg1 }">
+			<h4 class="text-center alert alert-danger" role="alert">${succMsg1 }</h4>
+			<c:remove var="succMsg1" />
 		</c:if>
 		<div class="row p-5">
 			<div class="col-md-4 offset-md-4">
@@ -26,10 +36,10 @@
 
 						<form action="login" method="post">
 							<div class="form-group">
-								<label>Enter Email</label> <input type="email"
-									required="required" class="form-control"
+								<label>Enter Email</label> <input type="email"  
+									required="required" class="form-control" 
 									id="exampleInputEmail1" aria-describedby="emailHelp"
-									name="email">
+									name="email" value="@gmail.com">
 							</div>
 
 							<div class="form-group">

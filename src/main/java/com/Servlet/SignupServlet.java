@@ -36,7 +36,7 @@ public class SignupServlet extends HttpServlet{
 			R.setDesignation(designation);
 			R.setRole(role);
 			
-			HttpSession session=req.getSession();
+			HttpSession session=req.getSession(false);
 			
 			JobDao dao=new JobDao(DBconnect.getconn());
 			boolean f=dao.insertRegisrationDetails(R);
@@ -44,8 +44,13 @@ public class SignupServlet extends HttpServlet{
 			{
 				session.setAttribute("succMsg", "Registered Successfully");
 				resp.sendRedirect("login.jsp");
-			}else {
-				session.setAttribute("succMsg", "Somethng went wrong..Pls try later");
+			}
+			else if(!f){
+				session.setAttribute("succMsg1", "Username is already in use..Pls try with another");
+				resp.sendRedirect("Signup.jsp");
+			}
+			else {
+				session.setAttribute("succMsg1", "Somethng went wrong..Pls try later");
 				resp.sendRedirect("Signup.jsp");
 			}
 			

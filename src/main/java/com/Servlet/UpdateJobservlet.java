@@ -34,7 +34,7 @@ public class UpdateJobservlet extends HttpServlet {
 			j.setStatus(status);
 			j.setDescription(desc);
 
-			HttpSession session = req.getSession();
+			HttpSession session = req.getSession(false);
 
 			JobDao dao = new JobDao(DBconnect.getconn());
 			boolean f = dao.updateJob(j);
@@ -42,7 +42,7 @@ public class UpdateJobservlet extends HttpServlet {
 				session.setAttribute("succMsg", "Job Updated Successfully..");
 				resp.sendRedirect("viewjobs.jsp");
 			} else {
-				session.setAttribute("succMsg", "Somethng went wrong..Pls try later");
+				session.setAttribute("succMsg1", "Something went wrong..Pls try later");
 				resp.sendRedirect("viewjobs.jsp");
 			}
 		} catch (Exception e) {

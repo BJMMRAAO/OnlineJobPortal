@@ -14,6 +14,7 @@
 <meta charset="ISO-8859-1">
 <title>Admin</title>
 <%@include file="all_components/all_css.jsp"%>
+<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <style type="text/css">
 .back-img {
 	background-image: url('img/people-waiting-job.jpg');

@@ -8,6 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Post Job here</title>
 <%@include file="all_components/all_css.jsp"%>
+<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 </head>
 <body style="background-color: #f0f1f2;">
 	<%@include file="all_components/nav_bar.jsp"%>
@@ -21,6 +22,10 @@
 
 						<c:if test="${not empty succMsg }">
 							<div class="alert alert-success" role="alert">${ succMsg}</div>
+							<c:remove var="succMsg" />
+						</c:if>
+						<c:if test="${not empty succMsg1 }">
+							<div class="alert alert-danger" role="alert">${ succMsg1}</div>
 							<c:remove var="succMsg" />
 						</c:if>
 

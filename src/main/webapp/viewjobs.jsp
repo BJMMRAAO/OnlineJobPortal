@@ -1,3 +1,4 @@
+<%@page import="org.apache.commons.collections.bag.SynchronizedSortedBag"%>
 <%@page import="com.entity.Jobs"%>
 <%@page import="com.dao.JobDao"%>
 <%@page import="java.sql.Connection"%>
@@ -14,6 +15,7 @@
 <meta charset="ISO-8859-1">
 <title>View Jobs</title>
 <%@include file="all_components/all_css.jsp"%>
+<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 </head>
 <body style="background-color: #f0f1f2;">
 	<%@include file="all_components/nav_bar.jsp"%>
@@ -25,45 +27,24 @@
 					<div class="alert alert-success" role="alert">${ succMsg}</div>
 					<c:remove var="succMsg" />
 				</c:if>
-				<c:if test="${userobj.role eq 'User' }">
-				<div class="card mt-2 mx-auto">
-					<div class="card-body">
-						<div class="text-center text-primary">
-							<div class="form-row">
-								<div class="form-group col-md-6">
-									<label>Location</label> <select name="location"
-										class="custom-select " id="inlineFormCustomSelect Pref">
-										<option selected>Choose...</option>
-										<option value="Hydrabad">Hydrabad</option>
-										<option value="Odisha">Odisha</option>
-										<option value="Jharkhand">Jharkhand</option>
-										<option value="Gujurat">Gujurat</option>
-										<option value="Bhubaneswar">Bhubaneswar</option>
-										<option value="Delhi">Delhi</option>
-										<option value="Bang Lore">Banglore</option>
-										<option value="Chennai">Chennai</option>
-									</select>
-								</div>
-								<div class="form-group col-md-6">
-									<label>Category</label> <select class="custom-select "
-										id="inlineFormCustomSelect Pref" name="category">
-										<option selected>Choose...</option>
-										<option value="IT">IT</option>
-										<option value="Devloper">Developer</option>
-										<option value="Banking">Banking</option>
-										<option value="Engineer">Engineer</option>
-										<option value="Teacher">Teacher</option>
-									</select>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<c:if test="${not empty succMsg1 }">
+					<div class="alert alert-danger" role="alert">${ succMsg1}</div>
+					<c:remove var="succMsg1" />
 				</c:if>
+				
+				
 				<%
 				JobDao dao = new JobDao(DBconnect.getconn());
-				List<Jobs> list = dao.getAllJobs();
+// 				HttpSession session = request.getSession(false);
+				String name = (String)session.getAttribute("name");
+				
+				if(name==null){
+					session.setAttribute("succMsg1", "Session timed out, pls login again");
+					response.sendRedirect("login.jsp");
+				}
+				List<Jobs> list = dao.getAllJobs(name);
 				for (Jobs j : list) {
+
 				%>
 				<div class="card mt-2">
 					<div class="card-body">

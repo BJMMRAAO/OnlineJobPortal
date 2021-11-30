@@ -7,6 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Grab Your Job Here</title>
+<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <%@include file="all_components/all_css.jsp"%>
 <style type="text/css">
 .back-img {
@@ -23,6 +24,7 @@
 	<%@include file="all_components/nav_bar.jsp"%>
 <% Connection conn=DBconnect.getconn();
 out.println(conn);
+
 %> 
 	<div class="container-fluid back-img">
 		<div class="text-center">

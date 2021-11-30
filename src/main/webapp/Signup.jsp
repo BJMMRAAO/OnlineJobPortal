@@ -6,6 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Signup Here</title>
 <%@include file="all_components/all_css.jsp"%>
+<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 </head>
 <body style="background-color: #f0f1f2;">
 	<%@include file="all_components/nav_bar.jsp"%>
@@ -43,7 +44,7 @@
 								<label>Enter Email</label> <input type="email"
 									required="required" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
-									name="email">
+									name="email" value="@gmail.com">
 							</div>
 
 							<div class="form-group">
@@ -55,7 +56,7 @@
 											class="form-control" id="password" name="password">&nbsp;&nbsp;
 										<div class="input-group-addon align-bottom" >
 
-											<a href=" "><i class="fa fa-eye-slash"
+											<a href=" "><i class="fa fa-eye-slash mt-2"
 												id="togglePassword" aria-hidden="true"></i></a>&nbsp;&nbsp;
 										</div>
 

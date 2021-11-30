@@ -27,11 +27,17 @@
     <version>4.4</version>
 </dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
-		</dependency>
+		</dependency> -->
+		<dependency>
+     <groupId>jstl</groupId>
+     <artifactId>jstl</artifactId>
+     <version>1.2</version>
+     <scope>provided</scope>
+ </dependency>
 		<dependency>
 			<groupId> org.apache.cassandra</groupId>
 			<artifactId>cassandra-all</artifactId>

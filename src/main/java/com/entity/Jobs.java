@@ -8,11 +8,13 @@ public class Jobs {
 	private String status;
 	private String location;
 	private String pdate;
+	private String name;
 	
 	public Jobs() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Jobs(String title, String description, String category, String status, String location, String pdate) {
 		super();
 		this.title = title;
@@ -64,7 +66,10 @@ public class Jobs {
 	public void setPdate(String pdate) {
 		this.pdate = pdate;
 	}
-	
-	
-
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 }
