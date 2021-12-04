@@ -2,7 +2,7 @@ package com.DB;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-//test
+
 public class DBconnect {
 
 	private static Connection conn1;
@@ -18,8 +18,9 @@ public class DBconnect {
 			e.printStackTrace();
 		}
 		return conn1;
+		//just for test
 	}
-	public static void main(String[] args) {
-		System.out.println(getconn());
-	}
+	/*
+	 * public static void main(String[] args) { System.out.println(getconn()); }
+	 */
 }
