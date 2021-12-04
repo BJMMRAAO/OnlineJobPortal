@@ -17,6 +17,7 @@ public class DBconnect {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println(conn1);
 		return conn1;
 		//just for test
 	}
