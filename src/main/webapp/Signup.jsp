@@ -7,13 +7,29 @@
 <title>Signup Here</title>
 <%@include file="all_components/all_css.jsp"%>
 <%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
+<style>
+.bg-img{
+background-image: url('img/tri-colour.jpg');
+	
+	height: 100%;
+	background-repeat: no-repeat; 
+	background-size: cover;	
+	opacity:0.5;
+}
+.card{
+border-radius:50px 50px;
+border:0px;
+opacity:1;
+
+}
+</style>
 </head>
 <body style="background-color: #f0f1f2;">
 	<%@include file="all_components/nav_bar.jsp"%>
-	<div class="continer-fluid">
-		<c:if test="${not empty succMsg }">
-			<h4 class="text-center text-danger">${succMsg }</h4>
-			<c:remove var="succMsg" />
+	<div class="continer-fluid bg-img">
+		<c:if test="${not empty succMsg1 }">
+			<h4 class="text-center text-danger">${succMsg1 }</h4>
+			<c:remove var="succMsg1" />
 		</c:if>
 		<div class="row p-5">
 			<div class="col-md-6 offset-md-3">
@@ -50,8 +66,8 @@
 							<div class="form-group">
 
 								<label for="password">Enter Password</label>
-								<div class="card">
-									<div class="input-group border-0" id="show_hide_password">
+								<div class="card rounded-0">
+									<div class="input-group " id="show_hide_password">
 										<input required="required" type="password"
 											class="form-control" id="password" name="password">&nbsp;&nbsp;
 										<div class="input-group-addon align-bottom" >

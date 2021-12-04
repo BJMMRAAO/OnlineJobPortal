@@ -72,6 +72,9 @@ public class LoginServlet extends HttpServlet {
 					r.setQualification(rs.getString(3));
 					r.setDesignation(rs.getString(4));
 					//name = rs.getString(1);
+					
+					session.setAttribute("name", rs.getString(1));
+					
 					res.sendRedirect("user.jsp");
 				}
 			}

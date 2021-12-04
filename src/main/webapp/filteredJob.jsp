@@ -27,7 +27,12 @@
 				
 				
 				<%
+				String name = (String)session.getAttribute("name");
 				
+				if(name==null){
+					session.setAttribute("succMsg1", "Session timed out, pls login again");
+					response.sendRedirect("login.jsp");
+				}
 				List<Jobs> list = (List)session.getAttribute("filterjob");
 				for (Jobs j : list) {
 
@@ -60,10 +65,8 @@
 							Publish Date:
 							<%=j.getPdate()%></h6>
 						<div class="text-center ">
-							<a href="edit_job.jsp?id=<%=j.getId()%>"
-								class="btn btn-sm bg-success text-white">Edit</a> <a
-								href="delete?id=<%=j.getId()%>"
-								class="btn btn-sm bg-danger text-white">Delete</a>
+							<a href="#"
+								class="btn btn-sm bg-success text-white">Apply</a> 
 
 						</div>
 					</div>

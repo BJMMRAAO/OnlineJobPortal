@@ -11,7 +11,7 @@
 <%@include file="all_components/all_css.jsp"%>
 <style type="text/css">
 .back-img {
-	background-image: url('img/photo.jpg');
+	background-image: url('img/JobPortalimage.jpg');
 	width: 100%;
 	height: 83.5vh;
 	background-repeat: no-repeat; 
