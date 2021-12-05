@@ -20,6 +20,7 @@ public class DBconnect {
 
 
 		System.out.println("asdfg");
+		//asdfghjk,mnbvcxzx
 		System.out.println(conn1);
 
 		return conn1;
