@@ -18,7 +18,8 @@ public class DBconnect {
 			e.printStackTrace();
 		}
 
-		System.out.println("========");
+
+		System.out.println("asdfg");
 		System.out.println(conn1);
 
 		return conn1;
