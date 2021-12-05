@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DBconnect {
 
 	private static Connection conn1;
-	
+
 	public static Connection getconn()
 	{
 		try {
@@ -17,7 +17,10 @@ public class DBconnect {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
+
+		System.out.println("========");
+		System.out.println(conn1);
+
 		return conn1;
 		
 	}
