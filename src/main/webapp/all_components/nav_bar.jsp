@@ -11,16 +11,22 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
+		<c:choose>
+		<c:when test="${!userobj.role eq  'Admin' or 'user' }">
 			<li class="nav-item active"><a class="nav-link" href="index.jsp"><i
 					class="fas fa-home"></i> Home </a></li>
-<c:choose>
+		</c:when>
 			<c:when test="${userobj.role eq 'Admin' }">
+			<li class="nav-item active"><a class="nav-link" href="admin.jsp"><i
+					class="fas fa-home"></i> Home </a></li>
 				<li class="nav-item"><a class="nav-link" href="postjob.jsp"><i
 						class="fas fa-plus-circle"></i> Post Job</a></li>
 				<li class="nav-item"><a class="nav-link" href="viewjobs.jsp"><i
 						class="fas fa-eye"></i> View Job</a></li>
 			</c:when>
 			<c:when test="${userobj.role eq 'User' }">
+			<li class="nav-item active"><a class="nav-link" href="user.jsp"><i
+					class="fas fa-home"></i> Home </a></li>
 				<li class="nav-item"><a class="nav-link" href="userFilterJobs.jsp"><i
 						class="fas fa-eye"></i>View-All-Jobs</a></li>
 			</c:when>

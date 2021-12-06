@@ -23,9 +23,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h5 class="text-center text-primary">All Jobs</h5>
-				
-				
-				
+				<h1 style="text-align:center">
+				<a href='userFilterJobs.jsp' style="color: red">click Here to search again</a>
+				</h1>
 				<%
 				String name = (String)session.getAttribute("name");
 				
@@ -33,6 +33,7 @@
 					session.setAttribute("succMsg1", "Session timed out, pls login again");
 					response.sendRedirect("login.jsp");
 				}
+				
 				List<Jobs> list = (List)session.getAttribute("filterjob");
 				for (Jobs j : list) {
 

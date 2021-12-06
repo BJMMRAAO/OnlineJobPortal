@@ -35,10 +35,9 @@ public class JobDao {
 			ps.setString(3, j.getCategory());
 			ps.setString(4, j.getStatus());
 			ps.setString(5, j.getLocation());
-			System.out.println("DAO J "+j.getName());
-			System.out.println("hashcode of j in DAO "+j.hashCode());
+			
 			ps.setString(6, j.getName());
-System.out.println("DAO J "+j.getName());
+
 			int i = ps.executeUpdate();
 
 			if (i == 1) {
@@ -158,7 +157,7 @@ System.out.println("DAO J "+j.getName());
 
 			if (i == 1) {
 				f = true;
-				System.out.println("registered SUccessfully");
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

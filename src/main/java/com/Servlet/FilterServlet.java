@@ -64,7 +64,9 @@ public class FilterServlet extends HttpServlet {
 				res.sendRedirect("filteredJob.jsp");
 			}
 			else {
-				pw.println("NO Records Found");
+				pw.println("<h3 style='text-align:center; color:red;'>NO Records Found</h3>");
+				
+				pw.println("<center><a href='userFilterJobs.jsp'>back to search</a></center>");
 			}
 
 		} catch (Exception e) {
