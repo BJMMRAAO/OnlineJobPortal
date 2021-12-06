@@ -23,9 +23,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h5 class="text-center text-primary">All Jobs</h5>
-				<h1 style="text-align:center">
-				<a href='userFilterJobs.jsp' style="color: red">click Here to search again</a>
-				</h1>
+				<h3 style="text-align:center">
+				<a href='userFilterJobs.jsp' style="color: #00ffff">click Here to search again</a>
+				</h3>
 				<%
 				String name = (String)session.getAttribute("name");
 				
@@ -66,7 +66,7 @@
 							Publish Date:
 							<%=j.getPdate()%></h6>
 						<div class="text-center ">
-							<a href="#"
+							<a href="ApplyJob.jsp"
 								class="btn btn-sm bg-success text-white">Apply</a> 
 
 						</div>

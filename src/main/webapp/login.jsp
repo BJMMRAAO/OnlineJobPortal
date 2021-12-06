@@ -19,6 +19,7 @@ border: 2px solid blue;
 background-image: url('img/login.jpg');
 
 	height: 88vh;
+	width: auto;
 	background-repeat: no-repeat; 
 	background-size: cover;	
 }
