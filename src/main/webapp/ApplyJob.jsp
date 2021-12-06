@@ -123,10 +123,10 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 								</div>
 							</div>
 							<div class="form-group">
-									<label>Address</label> <input type="textarea"
+									<label>Address</label> <textarea
 										required="required" class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
-										name="add">
+										name="add"></textarea>
 							</div>
 							<center>
 							<button type="submit" href="userFilterJobs.jsp"
