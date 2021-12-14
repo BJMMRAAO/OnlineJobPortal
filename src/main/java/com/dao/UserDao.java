@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Jobs;
-import com.entity.Registration;
+import com.dto.Jobs;
+import com.dto.Registration;
 
 public class UserDao {
 	public static final String QUERY_8 = "SELECT * FROM JOBPORTAL_JOBVIEWDETAILS WHERE CATEGORY=? AND LOCATION=?";

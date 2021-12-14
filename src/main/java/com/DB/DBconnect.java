@@ -12,7 +12,7 @@ public class DBconnect {
 		try {
 			if(conn1==null) {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
-				conn1=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","system","chitti");
+				conn1=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","system","tiger");
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

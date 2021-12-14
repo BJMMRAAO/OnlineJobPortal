@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Jobs;
-import com.entity.Registration;
+import com.dto.Jobs;
+import com.dto.Registration;
 
 public class JobDao {
 	public static final String QUERY_1 = "INSERT INTO JOBPORTAL_JOBVIEWDETAILS(ID,TITLE,DESCRIPTION,CATEGORY,STATUS,LOCATION,NAME) VALUES(JOBPORTAL_SQ.NEXTVAL,?,?,?,?,?,?)";

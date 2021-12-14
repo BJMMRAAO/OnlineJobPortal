@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.DB.DBconnect;
-import com.entity.Jobs;
+import com.dto.Jobs;
 
 @WebServlet("/filter")
 public class FilterServlet extends HttpServlet {
@@ -27,6 +28,8 @@ public class FilterServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		try {
+			
+			res.setContentType("text/html");
 			String location = req.getParameter("location");			
 			String category = req.getParameter("category");
 			
@@ -61,7 +64,8 @@ public class FilterServlet extends HttpServlet {
 				
 				session.setAttribute("filterjob", list);
 				
-				res.sendRedirect("filteredJob.jsp");
+				RequestDispatcher rd=req.getRequestDispatcher("filteredJob.jsp");
+				rd.forward(req, res);
 			}
 			else {
 				pw.println("<h3 style='text-align:center; color:red;'>NO Records Found</h3>");

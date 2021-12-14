@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.DB.DBconnect;
 import com.dao.JobDao;
-import com.entity.Jobs;
+import com.dto.Jobs;
 
 @WebServlet("/addJob")
 public class PostJobServlet extends HttpServlet{

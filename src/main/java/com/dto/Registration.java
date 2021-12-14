@@ -1,4 +1,4 @@
-package com.entity;
+package com.dto;
 
 public class Registration {
 	private int id;

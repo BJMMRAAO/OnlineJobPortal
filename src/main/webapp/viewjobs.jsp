@@ -1,5 +1,5 @@
 <%@page import="org.apache.commons.collections.bag.SynchronizedSortedBag"%>
-<%@page import="com.entity.Jobs"%>
+<%@page import="com.dto.Jobs"%>
 <%@page import="com.dao.JobDao"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="com.DB.DBconnect"%>

@@ -11,8 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import com.DB.DBconnect;
 import com.dao.JobDao;
-import com.entity.Jobs;
-import com.entity.Registration;
+import com.dto.Jobs;
+import com.dto.Registration;
 
 @WebServlet("/signup")
 public class SignupServlet extends HttpServlet{

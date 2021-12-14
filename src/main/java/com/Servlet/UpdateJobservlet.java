@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.DB.DBconnect;
 import com.dao.JobDao;
-import com.entity.Jobs;
+import com.dto.Jobs;
 
 @WebServlet("/update")
 public class UpdateJobservlet extends HttpServlet {

@@ -43,11 +43,9 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 			<h1 style="color: black">Become a Member of Our Organisation</h1>
 		</div>
 		<div class="row p-10">
-			//
 			<div class="col-md-6 offset-md-3">
 				<div class="card">
 					<div class="card-body">
-
 						<form action="ApplyJob" method="post">
 							<div class="form-row">
 								<div class="form-group col-md-6">
@@ -110,27 +108,44 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 										aria-describedby="emailHelp" name="phone" pattern="[0-9]{10}">
 								</div>
 								<div class="form-group col-md-4">
+									<label>Alternate Phone Number</label> <input type="tel"
+										placeholder="923678" pattern="[7-9]{1}[0-9]{9}" required
+										class="form-control" id="exampleInputEmail1"
+										aria-describedby="emailHelp" name="altphone"
+										pattern="[0-9]{10}">
+								</div>
+								<div class="form-group col-md-4">
 									<label>Enter Email</label> <input type="email"
 										required="required" class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
 										name="email" value="@gmail.com">
 								</div>
-								<div class="form-group col-md-4">
-									<label>Alternate Phone Number</label> <input type="tel"
-										placeholder="923678" pattern="[7-9]{1}[0-9]{9}" required
-										class="form-control" id="exampleInputEmail1"
-										aria-describedby="emailHelp" name="altphone" pattern="[0-9]{10}">
-								</div>
+
+
 							</div>
-							<div class="form-group">
-									<label>Address</label> <textarea
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label>Upload Resume</label> <input type="file"
 										required="required" class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
-										name="add"></textarea>
+										name="resume" value="@gmail.com">
+								</div>
+								<div class="form-group col-md-6">
+									<label>Upload Image</label> <input type="file"
+										required="required" class="form-control"
+										id="exampleInputEmail1" aria-describedby="emailHelp"
+										name="image" value="@gmail.com">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label>Address</label>
+								<textarea required="required" class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp" name="add"></textarea>
 							</div>
 							<center>
-							<button type="submit" href="userFilterJobs.jsp"
-								class="btn btn-primary">Login</button>
+								<button type="submit" href="userFilterJobs.jsp"
+									class="btn btn-primary">Login</button>
 							</center>
 						</form>
 					</div>

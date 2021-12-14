@@ -27,7 +27,7 @@
 			<c:when test="${userobj.role eq 'User' }">
 			<li class="nav-item active"><a class="nav-link" href="user.jsp"><i
 					class="fas fa-home"></i> Home </a></li>
-				<li class="nav-item"><a class="nav-link" href="userFilterJobs.jsp"><i
+				<li class="nav-item"><a class="nav-link" href="mainframe.html"><i
 						class="fas fa-eye"></i>View-All-Jobs</a></li>
 			</c:when>
 			</c:choose>

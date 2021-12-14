@@ -1,0 +1,20 @@
+<style>
+#bg {
+	background-color: #f0f1f2;
+}
+</style>
+
+<iframe src="userFilterJobs.jsp" name="f1" height="40%" width="100%"
+	style="border: none;"></iframe>
+<iframe id="bg" name="f2" height="60%" width="100%"
+	style="border: none;"></iframe>
+
+<script>
+function receiveMessage(event){
+   if (event.data=="removetheiframe"){
+      var element = document.getElementBytag('iframe-element');
+      element.parentNode.removeChild(element);
+   }
+}
+window.addEventListener("message", receiveMessage, false);
+</script>

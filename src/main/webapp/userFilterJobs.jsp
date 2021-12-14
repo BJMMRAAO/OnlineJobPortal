@@ -1,4 +1,4 @@
-<%@page import="com.entity.Jobs"%>
+<%@page import="com.dto.Jobs"%>
 <%@page import="com.dao.JobDao"%>
 <%@page import="com.dao.UserDao"%>
 <%@page import="java.sql.Connection"%>
@@ -25,12 +25,17 @@ if (name == null) {
 	response.sendRedirect("login.jsp");
 }
 %>
+<style>
+#bt{
+margin-top:8px;
+}
+</style>
 </head>
 <body style="background-color: #f0f1f2;">
 	<%@include file="all_components/nav_bar.jsp"%>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-8 offset-md-2">
 				<h5 class="text-center text-primary">All Jobs</h5>
 				<c:if test="${not empty succMsg }">
 					<div class="alert alert-success" role="alert">${ succMsg}</div>
@@ -40,9 +45,9 @@ if (name == null) {
 				<div class="card mt-2 mx-auto">
 					<div class="card-body">
 						<div class="text-primary">
-							<form action="filter" method="post">
+							<form action="filter" method="post" target="f2">
 								<div class="form-row">
-									<div class="form-group col-md-6">
+									<div class="form-group col-md-4 mr-8">
 										<label>Location</label> <select name="location"
 											class="custom-select " id="inlineFormCustomSelect Pref">
 											<option selected>Choose...</option>
@@ -56,7 +61,7 @@ if (name == null) {
 											<option value="Chennai">Chennai</option>
 										</select>
 									</div>
-									<div class="form-group col-md-6">
+									<div class="form-group col-md-4 mr-8">
 										<label>Category</label> <select class="custom-select "
 											id="inlineFormCustomSelect Pref" name="category">
 											<option selected>Choose...</option>
@@ -68,9 +73,12 @@ if (name == null) {
 										</select>
 
 									</div>
+								
+								<div id="bt" class="form-group col-md-2">
+									<br>
+									<button type="submit" class="btn btn-primary ">Submit</button>
+								
 								</div>
-								<div class="text-center">
-									<button type="submit" class="btn btn-primary badge-pill">&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;</button>
 								</div>
 							</form>
 						</div>

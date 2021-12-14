@@ -1,5 +1,5 @@
 <%@page import="org.apache.commons.collections.bag.SynchronizedSortedBag"%>
-<%@page import="com.entity.Jobs"%>
+<%@page import="com.dto.Jobs"%>
 <%@page import="com.dao.JobDao"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="com.DB.DBconnect"%>
@@ -16,16 +16,13 @@
 <title>View Jobs</title>
 <%@include file="all_components/all_css.jsp"%>
 <%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
+
 </head>
 <body style="background-color: #f0f1f2;">
-	<%@include file="all_components/nav_bar.jsp"%>
+	
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-				<h5 class="text-center text-primary">All Jobs</h5>
-				<h3 style="text-align:center">
-				<a href='userFilterJobs.jsp' style="color: #00ffff">click Here to search again</a>
-				</h3>
+			<div class="col-md-10 offset-md-1">
 				<%
 				String name = (String)session.getAttribute("name");
 				
@@ -48,15 +45,15 @@
 						<p><%=j.getDescription()%></p>
 						<br>
 						<div class="form-row">
-							<div class="form-group col-md-3">
+							<div class="form-group col-md-3 mr-5">
 								<input type="text" class="form-control form-control-sm"
 									value="Location:<%=j.getLocation()%>" readonly>
 							</div>
-							<div class="form-group col-md-3">
+							<div class="form-group col-md-3 mr-5">
 								<input type="text" class="form-control form-control-sm"
 									value="Category:<%=j.getCategory()%>" readonly>
 							</div>
-							<div class="form-group col-md-3">
+							<div class="form-group col-md-3 ">
 								<input type="text" class="form-control form-control-sm"
 									value="Status:<%=j.getStatus()%>" readonly>
 
