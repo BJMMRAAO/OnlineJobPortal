@@ -4,6 +4,26 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>sx</servlet-name>
+  	<display-name>sx</display-name>
+  	<description></description>
+  	<servlet-class>com.Servlet.sx</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ApplyJob</servlet-name>
+  	<display-name>ApplyJob</display-name>
+  	<description></description>
+  	<servlet-class>com.Servlet.ApplyJob</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>sx</servlet-name>
+  	<url-pattern>/sx</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ApplyJob</servlet-name>
+  	<url-pattern>/ApplyJob</url-pattern>
+  </servlet-mapping>
   
   
   <session-config>
