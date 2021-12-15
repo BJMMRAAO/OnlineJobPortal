@@ -20,11 +20,13 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import org.apache.cassandra.thrift.Cassandra.system_add_column_family_args;
+
 import com.dto.Apply;
 
 public class ApplyDao {
-	public static final String QUERY_1 = "INSERT INTO JOBPORTAL_APPLYJOB(FIRSTNAME,LASTNAME,DATEOFBIRTH,YEAROFGRADUATION,EXPERIENCE,TECHNOLOGIESKNOWN,"
-										+ "PHONENUMBER,ALTERNATEPHNUMBER,EMAIL,RESUME,PHOTO,ADDRESS,ROLE,COLLEGENAME) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	public static final String QUERY_1 = "INSERT INTO JOBPORTAL_APPLYJOB(ID,FIRSTNAME,LASTNAME,DATEOFBIRTH,YEAROFGRADUATION,EXPERIENCE,TECHNOLOGIESKNOWN,"
+										+ "PHONENUMBER,ALTERNATEPHNUMBER,EMAIL,RESUME,PHOTO,ADDRESS,ROLE,COLLEGENAME) VALUES(JOBPORTAL_SQ.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private Connection conn;
 
 	public ApplyDao(Connection conn) {
@@ -34,11 +36,12 @@ public class ApplyDao {
 	public boolean ApplyJob(Apply a) {
 		boolean f = false;
 		try {
+			System.out.println("%%%%%%%%%%%%%%%%%% Entered try block of Query");
 			PreparedStatement ps = conn.prepareStatement(QUERY_1);
 			ps.setString(1, a.getFirstName());
 			ps.setString(2, a.getLastName());
 			ps.setString(3, a.getDateOfBirth());	
-			ps.setString(4, a.getYearaOfGraduation());	
+			ps.setString(4, a.getYearOfGraduation());	
 			ps.setInt(5, a.getExperience());
 			ps.setString(6, a.getTechnologiesKnown());
 			ps.setInt(7, a.getPhoneNumber());
@@ -46,8 +49,8 @@ public class ApplyDao {
 			ps.setString(9, a.getEmail());
 			ps.setString(10, a.getResume());
 			ps.setString(11, a.getPhoto());
-			ps.setInt(12, a.getAddress());
-			ps.setInt(13, a.getRole());
+			ps.setString(12, a.getAddress());
+			ps.setString(13, a.getRole());
 			ps.setString(14, a.getCollegeName());
 			
 			int i = ps.executeUpdate();
@@ -56,6 +59,7 @@ public class ApplyDao {
 				f = true;
 			}
 		} catch (Exception e) {
+			System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&");
 			e.printStackTrace();
 		}
 		return f;

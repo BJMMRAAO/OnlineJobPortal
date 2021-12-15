@@ -46,16 +46,16 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 			<div class="col-md-6 offset-md-3">
 				<div class="card">
 					<div class="card-body">
-						<form action="ApplyJob" method="post">
+						<form action="Apply" method="post" enctype="multipart/form-data">
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label>First Name</label> <input type="text"
-										required="required" class="form-control"
+										 class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
 										name="fname">
 								</div>
 								<div class="form-group col-md-6">
-									<label>Last Name</label> <input type="text" required="required"
+									<label>Last Name</label> <input type="text" 
 										class="form-control" id="exampleInputEmail1"
 										aria-describedby="emailHelp" name="lname">
 								</div>
@@ -63,19 +63,19 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 							<div class="form-row">
 								<div class="form-group col-md-4">
 									<label>Date Of Birth</label> <input type="date"
-										required="required" class="form-control"
+										 class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
 										name="dob">
 								</div>
 
 								<div class="form-group col-md-4">
-									<label>Year Of Graduation</label> <select required="required"
+									<label>Year Of Graduation</label> <select 
 										class="form-control" id="ddlYears"
 										aria-describedby="emailHelp" name="yog"></select>
 								</div>
 								<div class="form-group col-md-4">
 									<label>Experience</label> <input type="number" min="0" max="30"
-										step="1" required="required" class="form-control"
+										step="1"  class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
 										name="exp">
 								</div>
@@ -83,19 +83,19 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-4">
-									<label>Role</label> <input type="text" required="required"
+									<label>Role</label> <input type="text" 
 										class="form-control" id="exampleInputEmail1"
 										aria-describedby="emailHelp" name="role">
 								</div>
 								<div class="form-group col-md-4">
 									<label>College Name</label> <input type="text"
-										required="required" class="form-control"
+										 class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
 										name="cname">
 								</div>
 								<div class="form-group col-md-4">
 									<label>Technologies</label> <input type="text"
-										required="required" class="form-control"
+										 class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
 										name="tech">
 								</div>
@@ -116,7 +116,7 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 								</div>
 								<div class="form-group col-md-4">
 									<label>Enter Email</label> <input type="email"
-										required="required" class="form-control"
+										 class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
 										name="email" value="@gmail.com">
 								</div>
@@ -126,13 +126,13 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label>Upload Resume</label> <input type="file"
-										required="required" class="form-control"
+										 class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
 										name="resume" value="@gmail.com">
 								</div>
 								<div class="form-group col-md-6">
 									<label>Upload Image</label> <input type="file"
-										required="required" class="form-control"
+										 class="form-control"
 										id="exampleInputEmail1" aria-describedby="emailHelp"
 										name="image" value="@gmail.com">
 								</div>
@@ -140,12 +140,12 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 
 							<div class="form-group">
 								<label>Address</label>
-								<textarea required="required" class="form-control"
+								<textarea  class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp" name="add"></textarea>
 							</div>
 							<center>
-								<button type="submit" href="userFilterJobs.jsp"
-									class="btn btn-primary">Login</button>
+								<button type="submit"
+									class="btn btn-primary">Submit</button>
 							</center>
 						</form>
 					</div>

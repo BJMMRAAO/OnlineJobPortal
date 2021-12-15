@@ -31,10 +31,6 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 </head>
 
 <body>
-
-
-
-
 	<c:if test="${userobj.role ne 'User' }">
 		<c:redirect url="login.jsp"></c:redirect>
 	</c:if>

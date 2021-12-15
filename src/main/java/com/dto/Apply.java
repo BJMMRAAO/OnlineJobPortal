@@ -5,7 +5,7 @@ public class Apply {
 	private String firstName;
 	private String lastName;
 	private String dateOfBirth;
-	private String yearaOfGraduation;
+	private String yearOfGraduation;
 	private int experience;
 	private String technologiesKnown;
 	private int phoneNumber;
@@ -13,11 +13,12 @@ public class Apply {
 	private String email;
 	private String resume;
 	private String photo;
-	private int address;
-	private int role;
+	private String address;
+	private String role;
 	private String collegeName;
 	
 	public int getId() {
+		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^ DTO  D");
 		return id;
 	}
 	public void setId(int id) {
@@ -41,11 +42,11 @@ public class Apply {
 	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-	public String getYearaOfGraduation() {
-		return yearaOfGraduation;
+	public String getYearOfGraduation() {
+		return yearOfGraduation;
 	}
-	public void setYearaOfGraduation(String yearaOfGraduation) {
-		this.yearaOfGraduation = yearaOfGraduation;
+	public void setYearOfGraduation(String yearaOfGraduation) {
+		this.yearOfGraduation = yearaOfGraduation;
 	}
 	public int getExperience() {
 		return experience;
@@ -89,16 +90,16 @@ public class Apply {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public int getAddress() {
+	public String getAddress() {
 		return address;
 	}
-	public void setAddress(int address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getRole() {
+	public String getRole() {
 		return role;
 	}
-	public void setRole(int role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 	public String getCollegeName() {
